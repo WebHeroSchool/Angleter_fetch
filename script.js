@@ -26,11 +26,11 @@ fetch('https://api.github.com/users/' + name)
         //     document.body.appendChild(newAvatar);
         //     document.body.appendChild(addString);
         // }
-        let createName = () => {
-            let newName = document.createElement('h2');
-            newName.innerHTML = name;
-            document.body.appendChild(newName);
-        }
+        // let createName = () => {
+        //     let newName = document.createElement('h2');
+        //     newName.innerHTML = name;
+        //     document.body.appendChild(newName);
+        // }
 
         // let createBio = () => {
         //     let newBio = document.createElement('p');
@@ -38,15 +38,21 @@ fetch('https://api.github.com/users/' + name)
         //     document.body.appendChild(newBio);
         // }
 
+        // let createProfile = () => {
+        //     let newProfile = document.createElement('a');
+        //     newProfile.href = profile;
+        //     document.body.appendChild(newProfile);
+        //     document.body.newProfile.appendChild(createName());
+        //     // document.body.newProfile.appendChild(createName());
+        // }
         let createProfile = () => {
-            let newProfile = document.createElement('a');
-            newProfile.href = profile;
-            // newProfile.text = 'privet';
-            document.body.appendChild(newProfile);
-            document.body.newProfile.appendChild(createName());
-            // document.body.newProfile.appendChild(createName());
+            let elementForLink = document.createElement('a');
+            let elementForHeader = document.createElement('h2');
+            
+            document.body.appendChild(elementForLink);
+            document.body.elementForLink.appendChild(elementForHeader);
+            elementForHeader.innerText('hello1');
         }
-
         createProfile();
         // createBio();
         // createAvatar();
