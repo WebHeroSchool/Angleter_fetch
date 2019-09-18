@@ -15,7 +15,7 @@ fetch('https://api.github.com/users/' + name)
     .then(res => res.json())
     .then(json => {
         let avatar = json.avatar_url;
-        let name = json.name;
+        let name = json.login;
         let bio = json.bio;
         let profile =json.html_url;
 
