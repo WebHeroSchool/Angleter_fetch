@@ -1,5 +1,4 @@
 let url = window.location.toString();
-let elementForPreloader = document.getElementById('preload');
 
 let getUsername = (url) => {
     let urlArray = url.split('=');
@@ -64,7 +63,8 @@ Promise.all([getUserData, getNowDate])
                 document.body.appendChild(newCurrentDate);
             }
 
-            elementForPreloader.classList.add('hidden')
+            let elementForPreloader = document.getElementById('preload');
+            elementForPreloader.classList.add('hidden');
             
             createProfile();
             createBio();
@@ -72,12 +72,10 @@ Promise.all([getUserData, getNowDate])
             createDate()
         }
         else {
-            elementForPreloader.classList.add('hidden');
             alert(' Пользователь с таким никнеймом не найден')
         }
     })
 
     .catch(err => {
-        elementForPreloader.classList.add('hidden');
         alert(err + ' Профиль не найден'); 
     });
